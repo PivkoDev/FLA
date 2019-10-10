@@ -1,6 +1,6 @@
 # FLA
 Flow Logic Analyser
 
-- C++17
+- Python 3
 - abstraction data layer between parsers and visualization
 - handled languages : Python, C++
