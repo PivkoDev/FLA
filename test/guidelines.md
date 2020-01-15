@@ -57,3 +57,30 @@ for i, item in enumerate(MANUFACTURERS):
   print ("{0} : {1}".format(i, item))
 ```
 
+11. use zip() / zip_longest()
+
+Iterators should have same length.
+
+12. Avoid else: after for: and while:
+
+13. Use try-except-else-finally
+
+```
+try:
+  data = handle.read() # may throw nicodeDecodeError.
+  op = json.loads(data) # may throw ValueError.
+  value = op['value']
+except ZeroDivisionError as e:
+  return UNDEFINED
+else:
+  op['result'] = value
+  return value
+finally:
+  handle.close() # Zawsze wykonywane.
+```
+
+14. Don't return None - throw Exceptions.
+
+15.
+
+
