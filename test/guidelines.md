@@ -34,3 +34,26 @@ c = b[1:-1] # ['c', 'e']
 ```
 thenewlist = [x + 23 for x in theoldlist]
 ```
+
+8. List comprehension : max 2 levels.
+
+```
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flat = [x for row in matrix for x in row]
+squared = [[x**2 for x in row] for row in matrix]
+```
+
+9. Use generator expressions. Especially for big data.
+```
+>>> squares = (n ** 2 for n in numbers)
+>>> squares
+<generator object <genexpr> at 0x7f733d4f7e10>
+```
+
+10. Prefer enumerate() over range()
+
+```
+for i, item in enumerate(MANUFACTURERS):
+  print ("{0} : {1}".format(i, item))
+```
+
