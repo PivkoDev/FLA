@@ -81,6 +81,20 @@ finally:
 
 14. Don't return None - throw Exceptions.
 
-15.
+15. Closures cooperation with variable scope.
+
+```
+def make_counter():
+    count = 0
+    def counter():
+        nonlocal count
+        count += 1
+        return count
+    return counter
+```
+
+16. Use generators, instead of return list
+
+
 
 
