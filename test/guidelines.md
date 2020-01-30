@@ -95,6 +95,43 @@ def make_counter():
 
 16. Use generators, instead of return list
 
+```
+def index_words_iter(text):
+  if text:
+    yield 0
+  for index, letter in enumerate(text):
+    if letter == ' ':
+    yield index + 1
+...
+result = list(index_words_iter(address))
+```
 
+17. If iterating, keep defensive.
 
+- be aware of functions that use iterators for input data 
+- iterator protocol : Iterable : iter() returns iterator, iterator __next__ returns next element until StopIteration 
+- implement __iter__() to have own container that supports iteration
 
+```
+lass ReadData(object):
+  def __init__(self):
+    pass
+  def __iter__(self):
+    with open('test.dat') as file:
+      for line in file:
+        yield int(line)
+
+def normalize(numbers):
+  if iter(numbers) is iter(numbers):
+    raise TypeError('Konieczne jest dostarczenie kontenera')
+  total = sum(numbers)
+  result = []
+  #  for calls iter() on second parameter
+  # special method foo.__iter() that returns get_iterator
+  for value in numbers:
+    percent = 100  * value / total
+    result.append(percent)
+  return result
+
+percentages = normalize(ReadData())
+````
