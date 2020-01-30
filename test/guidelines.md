@@ -134,4 +134,17 @@ def normalize(numbers):
   return result
 
 percentages = normalize(ReadData())
-````
+```
+
+18. Use varying positional arguments in functions (*args)
+
+19. Use named arguments in function calls.
+- always use named argument when it is optional
+```
+pounds_per_hour = flow_rate(weight_diff, time_diff,
+period=3600, units_per_kg=2.2)
+```
+
+20. Use None for default argument when they need to by dynamic.
+- default arguments are calculated once
+- use None and add describing docstring
