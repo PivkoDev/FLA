@@ -2,6 +2,8 @@
 
 :ramen: Guidelines :ramen:
 
+look also : https://github.com/fabioperez/cheat-sheets/blob/master/python/Effective-Python-summary.md
+
 1. Python 3 > Python 2
 
 2. use PEP 8
@@ -148,3 +150,23 @@ period=3600, units_per_kg=2.2)
 20. Use None for default argument when they need to by dynamic.
 - default arguments are calculated once
 - use None and add describing docstring
+
+21. Force to use named arguments
+(only in Python3)
+```
+def safe_division_c(number, divisor, *,
+  ignore_overflow=False,
+  ignore_zero_division=False):
+```
+(in Python 2)
+```
+def safe_division_d(number, divisor, **kwargs):
+  ignore_overflow = kwargs.pop('ignore_overflow', False)
+  ignore_zero_div = kwargs.pop('ignore_zero_division', False)
+  if kwargs:
+    raise TypeError('Nieoczekiwany **kwargs: %r' % kwargs)
+```
+
+22. Prefer helper classes than dicts or tuples.
+
+
