@@ -21,7 +21,7 @@ __getitem__() , __setitem__()
 
 6. Slicing with step value.
 ```
-list[begin:end:step
+list[begin:end:step]
 ```
 When step is used, don't use begin and end.
 Do it in 2 lines of code instead
